@@ -1,0 +1,68 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+form{
+    margin-top: 30px;
+    width: 300px;
+    box-shadow: 0 0 10px blue;
+    padding: 30px;
+    border-radius: 7px;
+}
+.contenedor{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+input{
+    width: 80%;
+    margin-bottom: 12px;
+    margin-top: 5px;
+    height: 24px;
+    background-color: rgb(193, 209, 255);
+    border: 0px;
+    outline-color: 2px solid blue;
+    /*border: 2px solid blue;*/
+    border-radius: 5px;
+    padding-left: 15px;
+}
+button{
+    margin-top: 10px;
+    height: 30px;
+    background-color: rgb(110, 131, 194);
+    border: 0px;
+    border-radius: 5px;
+    width: 85%;
+    cursor: pointer;
+}
+button:hover{
+    background-color: rgb(42, 59, 110);
+    color: white;
+}
+.tacheNombre, .tacheCelular, .tacheCorreo{
+    color: red;
+}
+
+.input-tache{
+    background-color: rgb(255, 116, 116);
+    border: 2px solid red;
+}
+
+.buenaNombre, .buenaCelular, .buenaCorreo{
+    color: green;
+}
+
+.input-buena{
+    background-color: rgb(147, 255, 147);
+    border: 2px solid green;
+}
+
+.mensajeNombre, .mensajeCelular, .mensajeCorreo{
+    font-size: small;
+    color: red;
+}
+.ocultar{
+    display: none;
+
+}
