@@ -2,8 +2,8 @@ class Usuario{
     constructor(Usuario){
         this.id=usuario.idusuario;
         this.nombre=usuario.nombre;
-        this.nombre=usuario.celular;
-        this.nombre=usuario.correo;
+        this.celular=usuario.celular;
+        this.correo=usuario.correo;
     }
     set id(id){
         this._id=id

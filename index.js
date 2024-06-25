@@ -4,7 +4,6 @@ var usuariosRutas=require("./routes/usuariosRutas");
 
 const app = express();
 app.set ("view engine", "ejs");
-console.log(__dirname);
 app.use("/", express.static(path.join(__dirname,"/web")));
 app.use(express.urlencoded({extended:true}));
 app.use("/", usuariosRutas);

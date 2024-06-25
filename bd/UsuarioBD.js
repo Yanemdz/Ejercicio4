@@ -20,7 +20,7 @@ class UsuarioBD extends ConectarBD{
         const sql="SELECT * FROM usuarios";
         try {
             await this.conectarMySql();
-            const [usuariosBD]=await this.conexion.execute(sql);
+            const usuariosBD=await this.conexion.execute(sql);
             //console.log(usuariosBD);
             await this.cerrarConexion();
             return usuariosBD;
@@ -45,11 +45,12 @@ class UsuarioBD extends ConectarBD{
     }
 
     async actualizarUsuario(usuario){
-        const sql="UPDATE usuarios SET nombre='"+usuario.nombre+"',celular='"+usuario.celular+"',correo='"+usuario.correo+"' WHERE idusuario="+usuario.idUsuario; 
+        console.log(usuario);
+        const sql="UPDATE usuarios SET nombre='"+usuario.nombre+"', celular='"+usuario.celular+"', correo='"+usuario.correo+"' WHERE idusuario="+usuario.idUsuario; 
         try {
             await this.conectarMySql();
             await this.conexion.execute(sql);
-            await this.conectarMySql();
+            await this.cerrarConexion();
             console.log("Actualizacon correcta");
         } catch (error) {
             console.error("Error al editar usuario"+error);
@@ -62,7 +63,7 @@ class UsuarioBD extends ConectarBD{
         try {
             await this.conectarMySql;
             await this.conexion.execute(sql);
-            await this.conectarMySql
+            await this.cerrarConexion
             console.log("Usuario borrado");
         } catch (error) {
             console.error("Error al borrar usuario"+error);
