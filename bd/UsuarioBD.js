@@ -32,7 +32,7 @@ class UsuarioBD extends ConectarBD{
     }
 
     async buscarUsuarioPorId(idUsuario){
-        const sql="SELECT * FROM usuarios WHERE idUsuario="+idUsuario;
+        const sql="SELECT * FROM usuarios WHERE idusuario="+idUsuario;
         try {
             await this.conectarMySql();
             const usuario=await this.conexion.execute(sql);
@@ -46,7 +46,7 @@ class UsuarioBD extends ConectarBD{
 
     async actualizarUsuario(usuario){
         console.log(usuario);
-        const sql="UPDATE usuarios SET nombre='"+usuario.nombre+"', celular='"+usuario.celular+"', correo='"+usuario.correo+"' WHERE idusuario="+usuario.idUsuario; 
+        const sql="UPDATE usuarios SET nombre='"+usuario.nombre+"', celular='"+usuario.celular+"', correo='"+usuario.correo+"' WHERE idusuario="+usuario.idusuario; 
         try {
             await this.conectarMySql();
             await this.conexion.execute(sql);
@@ -61,9 +61,9 @@ class UsuarioBD extends ConectarBD{
     async borrarUsuario(idusuario){
         const sql="DELETE FROM usuarios WHERE idusuario="+idusuario;
         try {
-            await this.conectarMySql;
+            await this.conectarMySql();
             await this.conexion.execute(sql);
-            await this.cerrarConexion
+            await this.cerrarConexion()
             console.log("Usuario borrado");
         } catch (error) {
             console.error("Error al borrar usuario"+error);

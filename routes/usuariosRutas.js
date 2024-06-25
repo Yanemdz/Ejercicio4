@@ -60,7 +60,7 @@ ruta.post("/editarUsuario", async(req,res)=>{
 ruta.get("/borrarUsuario/:idusuario", async(req, res)=>{
     const usuariobd=new UsuarioBD();
     usuariobd.borrarUsuario(req.params.idusuario);
-    res.render("/");
+    res.redirect("/");
 })
 
 module.exports=ruta;
