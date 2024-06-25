@@ -25,7 +25,7 @@ class UsuarioBD extends ConectarBD{
             await this.cerrarConexion();
             return usuariosBD;
         } catch (error) {
-            console.error("Error al recuperar los usuarios"+error);
+            console.error("Error al recuperar los usuarios (UsuarioBD.js)"+error);
             console.error(sql);
             return null;
         }

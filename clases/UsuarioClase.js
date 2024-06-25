@@ -1,5 +1,5 @@
 class Usuario{
-    constructor(Usuario){
+    constructor(usuario){
         this.id=usuario.idusuario;
         this.nombre=usuario.nombre;
         this.celular=usuario.celular;
@@ -19,7 +19,7 @@ class Usuario{
     }
 
     set celular(celular){
-        var regexTelefonoNacional = /^\d{10}$/;
+        var regexTelefono = /^\d{10}$/;
         if (regexTelefono.test(celular)){
         this._celular=celular;
         }

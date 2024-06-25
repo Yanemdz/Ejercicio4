@@ -6,17 +6,18 @@ ruta.get("/", async (req, res)=>{
     try {
         const usuariobd = new UsuarioBD();
         const [usuariosBD]=await usuariobd.mostrarUsuarios();
-        console.log(usuariosBD);
+        //console.log(usuariosBD);
         var usuariosCorrectos=[];
         usuariosBD.forEach(usuario => {
             const usuario1 = new Usuario(usuario);
+            //console.log(usuario1);
             if (usuario1.obtenerDatos.nombre != undefined && usuario1.obtenerDatos.celular != undefined && usuario1.obtenerDatos.correo != undefined) {
                 usuariosCorrectos.push(usuario);
             }
         });
         res.render("mostrarUsuarios", {usuariosCorrectos});
     } catch (error) {
-        console.error("Error al recuperar los usuarios"+error);
+        console.error("Error al recuperar los usuarios (usuariosRutas.js) "+error);
     }
 });
 
