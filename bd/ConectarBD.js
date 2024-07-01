@@ -5,18 +5,18 @@ class ConectarBD{
         this.mysql=require("mysql2/promise");
     }
     async conectarMySql(){
-    try {
-        this.conexion=await this.mysql.createConnection({
+        try {
+            this.conexion=await this.mysql.createConnection({
             host:process.env.HOSTMYSQL,
             user:process.env.USERMYSQL,
             password:process.env.PASSWORDMYSQL,
-            database:process.env.DATABASEMYSQL,
-            port:process.env.PORTMYSQL
-        });
-        console.log("Conexión creada a MySql");
-    } catch (error) {
+            database:process.env.PORTMYSQL,
+            port:3306
+            });
+            console.log("Conexión creada a MySql");
+        } catch (error) {
         console.error("Error al conectar con MySql"+error);
-    }
+        }
     }
     async cerrarConexion(){
         try {

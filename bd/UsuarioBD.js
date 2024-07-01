@@ -69,7 +69,7 @@ class UsuarioBD extends ConectarBD{
             console.error("Error al borrar usuario"+error);
             console.error(sql);
         }
-    };
+    }
 
 }
 

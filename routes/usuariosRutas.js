@@ -15,32 +15,34 @@ ruta.get("/", async (req, res)=>{
                 usuariosCorrectos.push(usuario);
             }
         });
+
         res.render("mostrarUsuarios", {usuariosCorrectos});
     } catch (error) {
-        console.error("Error al recuperar los usuarios (usuariosRutas.js) "+error);
+        console.error("Error al recuperar los usuarios "+error);
     }
 });
 
 
 ruta.post("/agregarUsuario",(req,res)=>{
-var usuario1 = new Usuario(req.body);
-console.log(usuario1.obtenerDatos);
-if (usuario1.obtenerDatos.nombre == undefined && usuario1.obtenerDatos.celular == undefined && usuario1.obtenerDatos.correo == undefined) {
-    res.render("error");
-} 
-else {
+    var usuario1 = new Usuario(req.body);
+    console.log(usuario1.obtenerDatos);
+    if (usuario1.obtenerDatos.nombre == undefined && usuario1.obtenerDatos.celular == undefined && usuario1.obtenerDatos.correo == undefined) {
+        res.render("error");
+    } 
+    else {
     const usuariobd = new UsuarioBD();
     usuariobd.crearUsuario(usuario1.obtenerDatos);
     res.redirect("/");
     }
 });
-ruta.get("/agregarusuario",(req,res)=>{
+
+ruta.get("/agregarUsuario",(req,res)=>{
     res.render("formulario");
 });
 
-ruta.get("/editarUsuario/:id",async(req, res)=>{
+ruta.get("/editarUsuario/:id",async(req,res)=>{
     const usuariobd = new UsuarioBD();
-    const [[usuario]] = await usuariobd.buscarUsuarioPorId(req.params.id)
+    const [[usuario]] = await usuariobd.buscarUsuarioPorId(req.params.id);
     //console.log(usuario);
     res.render("editarUsuario", usuario);
 });

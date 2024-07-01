@@ -11,8 +11,8 @@ class Usuario{
     set nombre(nombre){
         var regexNombre = /^[A-ZÁÉÍÓÚÑ'][a-záéíóúñ']{1,}([ ][A-ZÁÉÍÓÚÑ'][a-záéíóúñ']{1,}){0,}$/;
         if (regexNombre.test(nombre)){
-        this._nombre=nombre;
-        }
+            this._nombre=nombre;
+        } 
         else{
             console.log("Error al asignar nombre");
         }
@@ -21,8 +21,8 @@ class Usuario{
     set celular(celular){
         var regexTelefono = /^\d{10}$/;
         if (regexTelefono.test(celular)){
-        this._celular=celular;
-        }
+            this._celular=celular;
+        } 
         else{
             console.log("Error al asignar celular");
         }
@@ -30,8 +30,8 @@ class Usuario{
     set correo(correo){
         var regexCorreo = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
         if (regexCorreo.test(correo)){
-        this._correo=correo;
-        }
+            this._correo=correo;
+        } 
         else{
             console.log("Error al asignar correo");
         }
